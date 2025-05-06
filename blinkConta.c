@@ -209,17 +209,31 @@ void vTaskBuzzer(void *arg){
     while(true){
         if(modo_noturno){
             play_buzzer(BUZZER, 4000, 2000);
-            vTaskDelay(pdMS_TO_TICKS(2000));
+            vTaskDelay(pdMS_TO_TICKS(500));
+            vTaskDelay(pdMS_TO_TICKS(500));
+            vTaskDelay(pdMS_TO_TICKS(500));
+            vTaskDelay(pdMS_TO_TICKS(500));
         }else{
             if(estado_semaforo == 0){
                play_buzzer(BUZZER, 5500, 1000);
-               vTaskDelay(pdMS_TO_TICKS(5000));
+               vTaskDelay(pdMS_TO_TICKS(500));
+               vTaskDelay(pdMS_TO_TICKS(500));
+               vTaskDelay(pdMS_TO_TICKS(500));
+               vTaskDelay(pdMS_TO_TICKS(500));
+               vTaskDelay(pdMS_TO_TICKS(500));
+               vTaskDelay(pdMS_TO_TICKS(500));
+               vTaskDelay(pdMS_TO_TICKS(500));
+               vTaskDelay(pdMS_TO_TICKS(500));
+               vTaskDelay(pdMS_TO_TICKS(500));
+               vTaskDelay(pdMS_TO_TICKS(500));
             }else if(estado_semaforo == 1){
                 play_buzzer(BUZZER, 5500, 300);
                 vTaskDelay(pdMS_TO_TICKS(300));
             }else if(estado_semaforo == 2){
                 play_buzzer(BUZZER, 5500, 500);
-                vTaskDelay(pdMS_TO_TICKS(1500));
+                vTaskDelay(pdMS_TO_TICKS(500));
+                vTaskDelay(pdMS_TO_TICKS(500));
+                vTaskDelay(pdMS_TO_TICKS(500));
             }
         }
     }
@@ -232,21 +246,54 @@ void vTaskSemaforoDiurno(void *arg){
             estado_semaforo = 0;
             gpio_put(LED_PIN_GREEN, 1);
             gpio_put(LED_PIN_RED, 0);
-            vTaskDelay(pdMS_TO_TICKS(6000));
+            vTaskDelay(pdMS_TO_TICKS(500));
+            vTaskDelay(pdMS_TO_TICKS(500));
+            vTaskDelay(pdMS_TO_TICKS(500));
+            vTaskDelay(pdMS_TO_TICKS(500));
+            vTaskDelay(pdMS_TO_TICKS(500));
+            vTaskDelay(pdMS_TO_TICKS(500));
+            vTaskDelay(pdMS_TO_TICKS(500));
+            vTaskDelay(pdMS_TO_TICKS(500));
+            vTaskDelay(pdMS_TO_TICKS(500));
+            vTaskDelay(pdMS_TO_TICKS(500));
+            vTaskDelay(pdMS_TO_TICKS(500));
+            vTaskDelay(pdMS_TO_TICKS(500));
 
             if(modo_noturno == 0){
                 // SINAL AMARELO
                 estado_semaforo = 1;
                 gpio_put(LED_PIN_GREEN, 1);
                 gpio_put(LED_PIN_RED, 1);
-                vTaskDelay(pdMS_TO_TICKS(2000));
+                vTaskDelay(pdMS_TO_TICKS(500));
+                vTaskDelay(pdMS_TO_TICKS(500));
+                vTaskDelay(pdMS_TO_TICKS(500));
+                vTaskDelay(pdMS_TO_TICKS(500));
 
                 if(modo_noturno == 0){
                     // SINAL VERMELHO
                     estado_semaforo = 2;
                     gpio_put(LED_PIN_GREEN, 0);
                     gpio_put(LED_PIN_RED, 1);
-                    vTaskDelay(pdMS_TO_TICKS(10000));
+                    vTaskDelay(pdMS_TO_TICKS(500));
+                    vTaskDelay(pdMS_TO_TICKS(500));
+                    vTaskDelay(pdMS_TO_TICKS(500));
+                    vTaskDelay(pdMS_TO_TICKS(500));
+                    vTaskDelay(pdMS_TO_TICKS(500));
+                    vTaskDelay(pdMS_TO_TICKS(500));
+                    vTaskDelay(pdMS_TO_TICKS(500));
+                    vTaskDelay(pdMS_TO_TICKS(500));
+                    vTaskDelay(pdMS_TO_TICKS(500));
+                    vTaskDelay(pdMS_TO_TICKS(500));
+                    vTaskDelay(pdMS_TO_TICKS(500));
+                    vTaskDelay(pdMS_TO_TICKS(500));
+                    vTaskDelay(pdMS_TO_TICKS(500));
+                    vTaskDelay(pdMS_TO_TICKS(500));
+                    vTaskDelay(pdMS_TO_TICKS(500));
+                    vTaskDelay(pdMS_TO_TICKS(500));
+                    vTaskDelay(pdMS_TO_TICKS(500));
+                    vTaskDelay(pdMS_TO_TICKS(500));
+                    vTaskDelay(pdMS_TO_TICKS(500));
+                    vTaskDelay(pdMS_TO_TICKS(500));
                 }
             }    
         }
